@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 4000;
 
 app.get('/', (request, response) => {
   response.send(`
@@ -62,7 +63,7 @@ app.get('/users/{:userId}', (request, response) => {
 });
 
 
-app.listen(4000, function(erro){
+app.listen(PORT, function(erro){
     if(erro) {
         console.log("Erro ao Iniciar.");
     } else {
