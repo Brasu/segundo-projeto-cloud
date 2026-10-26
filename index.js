@@ -3,26 +3,26 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.get('/', (request, response) => {
-  response.send(`
+    response.send(`
     <html>
       <head>
         <title>Principal</title>
         <style>
           body { font-family: Comic sans ms, sans-serif; margin: 40px; }
-          h1 { color: #0066cc; }
+          h1 { color: #07cc00; }
           p { margin-bottom: 20px; }
         </style>
       </head>
       <body>
         <h1>Bem vindo ao meu site!</h1>
-        <p>Outras rotas: <a href="/search">Busca</a> | <a href="/users/">Usuários</a> | <a href="/contact">Contato</a></p>
+        <p>Outras rotas: <a href="/search">Consulta</a> | <a href="/users/">Usuário</a> | <a href="/contact">Contato</a></p>
       </body>
     </html>
   `);
 });
 
-app.get('/contact', (request, response) =>{
-  response.send(`
+app.get('/contact', (request, response) => {
+    response.send(`
     <title>Contato</title>
     <style>
           body { font-family: Comic sans ms, sans-serif; margin: 40px; }
@@ -35,9 +35,9 @@ app.get('/contact', (request, response) =>{
 });
 
 app.get('/search', (request, response) => {
-  const { q, categoria, limite } = request.query;
-  
-  response.send(`
+    const { q, categoria, limite } = request.query;
+
+    response.send(`
     <title>Consulta</title>
     <style>
           body { font-family: Comic sans ms, sans-serif; margin: 40px; }
@@ -51,7 +51,7 @@ app.get('/search', (request, response) => {
 });
 
 app.get('/users/{:userId}', (request, response) => {
-  response.send(`
+    response.send(`
     <title>Usuário</title>
     <style>
           body { font-family: Comic sans ms, sans-serif; margin: 40px; }
@@ -63,8 +63,8 @@ app.get('/users/{:userId}', (request, response) => {
 });
 
 
-app.listen(PORT, function(erro){
-    if(erro) {
+app.listen(PORT, function(erro) {
+    if (erro) {
         console.log("Erro ao Iniciar.");
     } else {
         console.log("Servidor Iniciado! Acesso em localhost:4000!")
